@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ljk-5W-jnV">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SAG-ep-CmR">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="Kqp-hv-VgJ">
+                            <connections>
+                                <action selector="historyButtonTapped:" destination="BYZ-38-t0r" id="9Wn-P2-UAc"/>
+                                <segue destination="GHI-gJ-ccR" kind="presentation" identifier="history" modalPresentationStyle="formSheet" id="3RE-sV-oaK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992" y="-502"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="8P3-G8-Opt">
+            <objects>
+                <viewController id="GHI-gJ-ccR" customClass="HistoryViewController" customModule="Dummy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bJw-SF-mXh"/>
+                        <viewControllerLayoutGuide type="bottom" id="idl-Tq-Ced"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pvT-je-gKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-WT-9Rz">
+                                <items>
+                                    <barButtonItem title="Done" id="yMZ-7R-3ff">
+                                        <connections>
+                                            <action selector="dismiss:" destination="GHI-gJ-ccR" id="92k-u5-42e"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fHL-Mb-Ql8" customClass="HistoryTableView" customModule="Dummy" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="historyCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" rowHeight="115" id="II7-c4-Gvn" customClass="HistoryTableViewCell" customModule="Dummy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="540" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="II7-c4-Gvn" id="LYJ-bf-o1R">
+                                            <frame key="frameInset" width="540" height="114"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xm4-gA-pxI" customClass="HistoryStackView" customModule="Dummy" customModuleProvider="target">
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aW8-yj-rjM">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reason" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blx-XD-a7r">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCD-li-ulV">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7E-YR-XLo">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difference" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pol-on-Se0">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Pol-on-Se0" firstAttribute="width" secondItem="aW8-yj-rjM" secondAttribute="width" id="HqC-Ww-29w"/>
+                                                        <constraint firstItem="blx-XD-a7r" firstAttribute="width" secondItem="aW8-yj-rjM" secondAttribute="width" id="PNU-lG-bFM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Pol-on-Se0" secondAttribute="trailing" id="W2e-cl-cWg"/>
+                                                        <constraint firstItem="aW8-yj-rjM" firstAttribute="leading" secondItem="Xm4-gA-pxI" secondAttribute="leading" id="Wjg-Pd-lQf"/>
+                                                        <constraint firstItem="X7E-YR-XLo" firstAttribute="width" secondItem="aW8-yj-rjM" secondAttribute="width" id="oD8-De-kIu"/>
+                                                        <constraint firstItem="dCD-li-ulV" firstAttribute="width" secondItem="aW8-yj-rjM" secondAttribute="width" id="u4Y-qi-PYF"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Xm4-gA-pxI" secondAttribute="trailing" id="AzB-v2-UHr"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Xm4-gA-pxI" secondAttribute="leading" id="ThZ-Dl-C1r"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Xm4-gA-pxI" secondAttribute="bottom" id="cnL-Tz-vv6"/>
+                                                <constraint firstItem="Xm4-gA-pxI" firstAttribute="top" secondItem="LYJ-bf-o1R" secondAttribute="topMargin" id="eJu-MF-hL9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ValueLabel" destination="Pol-on-Se0" id="j9d-hj-LCb"/>
+                                            <outlet property="actionLabel" destination="dCD-li-ulV" id="t8C-lR-DZ7"/>
+                                            <outlet property="nameLabel" destination="aW8-yj-rjM" id="AwX-w2-Nwj"/>
+                                            <outlet property="reasonLabel" destination="blx-XD-a7r" id="N55-Za-ATg"/>
+                                            <outlet property="timeLabel" destination="X7E-YR-XLo" id="9Lk-7D-x4I"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fHL-Mb-Ql8" firstAttribute="top" secondItem="a0R-WT-9Rz" secondAttribute="bottom" id="58E-NO-xFO"/>
+                            <constraint firstItem="a0R-WT-9Rz" firstAttribute="top" secondItem="bJw-SF-mXh" secondAttribute="bottom" id="B3y-0k-9wi"/>
+                            <constraint firstItem="idl-Tq-Ced" firstAttribute="top" secondItem="fHL-Mb-Ql8" secondAttribute="bottom" id="ChM-Lh-IDc"/>
+                            <constraint firstItem="a0R-WT-9Rz" firstAttribute="leading" secondItem="pvT-je-gKZ" secondAttribute="leadingMargin" constant="-20" id="UFV-Hi-BNG"/>
+                            <constraint firstItem="fHL-Mb-Ql8" firstAttribute="leading" secondItem="pvT-je-gKZ" secondAttribute="leadingMargin" constant="-20" id="ajz-Eb-Zii"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a0R-WT-9Rz" secondAttribute="trailing" constant="-20" id="hTY-AG-Hc8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fHL-Mb-Ql8" secondAttribute="trailing" constant="-20" id="vm8-Xn-QdS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fHL-Mb-Ql8" id="bgZ-8R-yt1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kHo-J3-a5J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1565.625" y="-502.14843749999994"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Df9-dQ-auP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ljk-5W-jnV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b5m-H6-962">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="a8l-TX-1tn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlb-0P-dZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="179.8828125" y="-502.04978038067344"/>
+        </scene>
+    </scenes>
+</document>
